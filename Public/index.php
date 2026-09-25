@@ -4,4 +4,6 @@ const BASE_PATH = __DIR__ . '/../';
 
 require BASE_PATH . 'Core/functions.php';
 
-require base_path('controllers/index.php');
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+
+require base_path('routes.php');
