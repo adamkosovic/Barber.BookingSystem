@@ -1,69 +1,169 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boka tid</title>
+
+    <title>Boka tid | Barber</title>
+
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
 
-    <h1>Boka tid</h1>
+    <!-- NAVIGATION -->
+    <header class="header">
+        <nav class="navbar">
 
-    <form method="POST" action="/bookings">
+            <a href="/" class="logo">
+                BARBER<span>.</span>
+            </a>
 
-        <div>
-            <label for="name">Namn</label>
-            <input type="text" id="name" name="name">
+            <div class="nav-links">
+                <a href="/">Hem</a>
+                <a href="/bookings/create">Boka tid</a>
+                <a href="/login">Logga in</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- BOKNINGSFORMULÄR -->
+    <main class="booking-page">
+
+        <div class="booking-heading">
+
+            <p class="subtitle">
+                BOKA ONLINE
+            </p>
+
+            <h1>Boka din tid</h1>
+
+            <p>
+                Välj behandling och en tid som passar dig.
+            </p>
+
         </div>
 
-        <div>
-            <label for="email">E-post</label>
-            <input type="email" id="email" name="email">
+
+        <div class="booking-card">
+
+            <form action="/bookings" method="POST" class="booking-form">
+
+                <!-- BEHANDLING -->
+                <div class="form-group">
+
+                    <label for="service">
+                        Behandling
+                    </label>
+
+                    <select id="service" name="service" required>
+
+                        <option value="">
+                            Välj behandling
+                        </option>
+
+                        <?php foreach ($services as $service) : ?>
+
+                            <option value="<?= $service['id'] ?>">
+                                <?= htmlspecialchars($service['name']) ?>
+                                - <?= $service['price'] ?> kr
+                            </option>
+
+                        <?php endforeach; ?>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DATUM OCH TID -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            Datum
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="time">
+                            Tid
+                        </label>
+
+                        <input
+                            type="time"
+                            id="time"
+                            name="time"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-divider"></div>
+
+
+                <h2>Dina uppgifter</h2>
+
+
+                <!-- NAMN -->
+                <div class="form-group">
+
+                    <label for="name">
+                        Namn
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Ditt namn"
+                        required>
+
+                </div>
+
+
+                <!-- E-POST -->
+                <div class="form-group">
+
+                    <label for="email">
+                        E-post
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="namn@email.se"
+                        required>
+
+                </div>
+
+
+                <button type="submit" class="booking-button">
+                    Boka tid
+                </button>
+
+            </form>
+
         </div>
 
-        <div>
-            <label for="service">Behandling</label>
-            <select id="service" name="service">
-                <option value="">Välj behandling</option>
-
-                <?php foreach($services as $services) : ?>
-                    <option value="<?= $services['id'] ?>">
-                        <?= $services['name'] ?> - <?= $services['price'] ?> kr
-                    </option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-
-        <div>
-            <label for="date">Datum</label>
-            <input type="date" id="date" name="date">
-        </div>
-
-        <div>
-        <div>
-            <label for="time">Välj tid</label>
-
-            <select id="time" name="time">
-                <option value="">Välj en tid</option>
-                <option value="09:00">09:00</option>
-                <option value="09:30">09:30</option>
-                <option value="10:00">10:00</option>
-                <option value="10:30">10:30</option>
-                <option value="11:00">11:00</option>
-                <option value="11:30">11:30</option>
-                <option value="13:00">13:00</option>
-                <option value="13:30">13:30</option>
-                <option value="14:00">14:00</option>
-                <option value="14:30">14:30</option>
-                <option value="15:00">15:00</option>
-                <option value="15:30">15:30</option>
-            </select>
-        </div>
-        </div>
-
-        <button type="submit">Boka tid</button>
-
-    </form>
+    </main>
 
 </body>
+
 </html>
