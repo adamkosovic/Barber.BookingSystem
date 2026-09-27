@@ -25,9 +25,12 @@
             <label for="service">Behandling</label>
             <select id="service" name="service">
                 <option value="">Välj behandling</option>
-                <option value="haircut">Klippning</option>
-                <option value="beard">Skäggtrimning</option>
-                <option value="haircut_beard">Klippning + skägg</option>
+
+                <?php foreach($services as $services) : ?>
+                    <option value="<?= $services['id'] ?>">
+                        <?= $services['name'] ?> - <?= $services['price'] ?> kr
+                    </option>
+                <?php endforeach; ?>
             </select>
         </div>
 

@@ -10,4 +10,13 @@ class Database
 
     $this->connection = new PDO($dsn, 'root', '');
   }
+
+  public function query($query)
+  {
+    $statement = $this->connection->prepare($query);
+
+    $statement->execute();
+
+    return $statement;
+  }
 }
