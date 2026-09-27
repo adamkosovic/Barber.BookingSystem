@@ -11,11 +11,11 @@ class Database
     $this->connection = new PDO($dsn, 'root', '');
   }
 
-  public function query($query)
+  public function query($query, $params = [])
   {
     $statement = $this->connection->prepare($query);
 
-    $statement->execute();
+    $statement->execute($params);
 
     return $statement;
   }
