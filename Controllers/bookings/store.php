@@ -36,6 +36,13 @@ $db->query(
     ]
 );
 
-header('Location: /bookings');
+header(
+    'Location: /bookings/confirmation?' . 
+    http_build_query([
+        'name' => $name,
+        'date' => $date,
+        'time' => $time
+    ])
+);
 
 exit();

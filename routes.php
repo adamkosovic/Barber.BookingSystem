@@ -12,6 +12,10 @@ $router->get(
   'controllers/bookings/available-times.php'
 );
 
+$router->get('/bookings/confirmation',
+  'controllers/bookings/confirmation.php'
+);
+
 $router->post('/bookings', 'controllers/bookings/store.php');
 
 
