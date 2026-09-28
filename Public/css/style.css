@@ -1061,3 +1061,140 @@ img {
 .logout-button:hover {
   color: #9a6b3f;
 }
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-page {
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px 20px;
+
+  background: #f5f2ed;
+}
+
+
+/* LOGIN-KORT */
+
+.login-card {
+  width: 100%;
+  max-width: 480px;
+
+  padding: 50px;
+
+  background: #ffffff;
+}
+
+.login-card .subtitle {
+  margin: 0 0 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #9a6b3f;
+}
+
+.login-card h1 {
+  margin: 0 0 10px;
+
+  font-size: 42px;
+  font-weight: 700;
+
+  color: #191919;
+}
+
+.login-card > p:not(.subtitle) {
+  margin: 0 0 35px;
+
+  font-size: 15px;
+  color: #666;
+}
+
+
+/* FORMULÄR */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+.login-form .form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.login-form label {
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #191919;
+}
+
+.login-form input {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 16px;
+
+  border: 1px solid #d8d3cc;
+
+  background: #faf9f7;
+  color: #191919;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  outline: none;
+  box-sizing: border-box;
+
+  transition: border-color 0.2s ease;
+}
+
+.login-form input:focus {
+  border-color: #9a6b3f;
+}
+
+
+/* LOGIN-KNAPP */
+
+.login-form .booking-button {
+  width: 100%;
+
+  margin-top: 8px;
+}
+
+
+/* =========================
+ MOBIL
+========================= */
+
+@media (max-width: 600px) {
+
+  .login-page {
+      padding: 40px 20px;
+  }
+
+  .login-card {
+      padding: 35px 25px;
+  }
+
+  .login-card h1 {
+      font-size: 36px;
+  }
+}
