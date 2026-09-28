@@ -1044,3 +1044,20 @@ img {
     padding: 0;
   }
 }
+
+.logout-button {
+  border: none;
+  padding: 0;
+
+  background: transparent;
+  color: inherit;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  color: #9a6b3f;
+}

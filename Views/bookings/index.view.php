@@ -24,6 +24,12 @@
                 <a href="/">Hem</a>
                 <a href="/bookings/create">Boka tid</a>
                 <a href="/bookings">Bokningar</a>
+
+                <form action="/logout" method="POST">
+                    <button type="submit" class="logout-button">
+                    Logga ut
+                    </button>
+                </form>
             </div>
 
         </nav>

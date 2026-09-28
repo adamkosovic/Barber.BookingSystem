@@ -24,6 +24,13 @@ $router->post(
 $router->post('/bookings', 'controllers/bookings/store.php');
 
 
+//LOGIN
+$router->get('/login', 'controllers/login/create.php');
+
+$router->post('/login', 'controllers/login/store.php');
+
+$router->post('/logout', 'controllers/login/destroy.php');
+
 
 
 
