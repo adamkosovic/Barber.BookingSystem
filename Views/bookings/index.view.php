@@ -16,13 +16,11 @@
     <header class="header">
         <nav class="navbar">
 
-            <a href="/" class="logo">
+            <a href="/bookings" class="logo">
                 BARBER<span>.</span>
             </a>
 
             <div class="nav-links">
-                <a href="/">Hem</a>
-                <a href="/bookings/create">Boka tid</a>
                 <a href="/bookings">Bokningar</a>
 
                 <form action="/logout" method="POST">
