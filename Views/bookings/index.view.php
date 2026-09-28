@@ -50,6 +50,39 @@
             </p>
 
         </div>
+        <div class="booking-filter">
+
+            <form action="/bookings" method="GET">
+
+                <div class="filter-group">
+
+                    <label for="date">
+                        Välj datum
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        value="<?= htmlspecialchars($date ?? '') ?>">
+
+                </div>
+
+                <button type="submit" class="filter-button">
+                    Visa bokningar
+                </button>
+
+                <?php if ($date) : ?>
+
+                    <a href="/bookings" class="show-all-button">
+                        Visa alla
+                    </a>
+
+                <?php endif; ?>
+
+            </form>
+
+        </div>
 
 
         <div class="bookings-list">
