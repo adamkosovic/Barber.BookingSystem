@@ -24,4 +24,7 @@ if($admin && password_verify($password, $admin['password'])) {
   exit();
 }
 
-die('Fel e-post eller lösenord.');
+$_SESSION['error'] = 'Fel e-post eller lösenord.';
+
+header('Location: /login');
+exit();

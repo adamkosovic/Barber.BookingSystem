@@ -1333,3 +1333,9 @@ img {
       justify-content: center;
   }
 }
+
+.login-error {
+  color: #8a3f2d;
+
+  font-size: 14px;
+}

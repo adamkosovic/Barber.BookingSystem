@@ -12,6 +12,7 @@
 
 <body>
 
+    <!-- NAVIGATION -->
     <header class="header">
         <nav class="navbar">
 
@@ -29,6 +30,7 @@
     </header>
 
 
+    <!-- LOGIN -->
     <main class="login-page">
 
         <div class="login-card">
@@ -44,6 +46,7 @@
             </p>
 
 
+            <!-- LOGINFORMULÄR -->
             <form action="/login" method="POST" class="login-form">
 
                 <div class="form-group">
@@ -76,6 +79,15 @@
                         required>
 
                 </div>
+
+                            <!-- FELMEDDELANDE -->
+                <?php if ($error) : ?>
+
+                    <div class="login-error">
+                        <?= htmlspecialchars($error) ?>
+                    </div>
+
+                <?php endif; ?>
 
 
                 <button type="submit" class="booking-button">
