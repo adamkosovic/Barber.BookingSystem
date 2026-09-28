@@ -103,11 +103,17 @@
                             Tid
                         </label>
 
-                        <input
-                            type="time"
-                            id="time"
+                        <select
                             name="time"
-                            required>
+                            id="time"
+                            required
+                            disabled>
+
+                            <option value="">
+                                Välj datum först
+                            </option>
+
+                        </select>
 
                     </div>
 
@@ -163,6 +169,73 @@
         </div>
 
     </main>
+
+
+    <script>
+
+        // Hämtar datumfältet
+        const dateInput = document.querySelector('#date');
+
+        // Hämtar dropdown-menyn för tider
+        const timeSelect = document.querySelector('#time');
+
+        const times = <?= json_encode($times) ?>;
+
+        // Körs när kunden väljer ett datum
+        dateInput.addEventListener('change', async function () {
+
+            // Hämtar datumet som kunden valt
+            const date = dateInput.value;
+
+
+            // Frågar PHP vilka tider som redan är bokade
+            const response = await fetch(
+                `/bookings/available-times?date=${date}`
+            );
+
+
+            // Gör JSON-svaret till en JavaScript-array
+            const bookedTimes = await response.json();
+
+
+            // Tömmer dropdown-menyn
+            timeSelect.innerHTML = '';
+
+
+            // Skapar första alternativet
+            const defaultOption = document.createElement('option');
+
+            defaultOption.value = '';
+            defaultOption.textContent = 'Välj tid';
+
+            timeSelect.appendChild(defaultOption);
+
+
+            // Går igenom alla bokningstider
+            times.forEach(function (time) {
+
+                // Kontrollerar om tiden redan är bokad
+                if (!bookedTimes.includes(time)) {
+
+                    // Skapar ett nytt option-element
+                    const option = document.createElement('option');
+
+                    option.value = time;
+                    option.textContent = time;
+
+                    // Lägger tiden i dropdown-menyn
+                    timeSelect.appendChild(option);
+                }
+
+            });
+
+
+            // Gör dropdown-menyn klickbar
+            timeSelect.disabled = false;
+
+        });
+
+    </script>
 
 </body>
 

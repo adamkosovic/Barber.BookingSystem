@@ -494,46 +494,42 @@ img {
 .booking-form {
   display: flex;
   flex-direction: column;
-
   gap: 25px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-
   gap: 9px;
-
   flex: 1;
 }
 
 .form-group label {
   font-size: 13px;
   font-weight: 700;
-
   letter-spacing: 1px;
-
   text-transform: uppercase;
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
+  min-height: 52px;
 
-  padding: 15px 16px;
+  padding: 14px 16px;
 
   border: 1px solid #d8d3cc;
+  border-radius: 0;
 
-  background: #faf9f7;
-
+  background-color: #faf9f7;
   color: #191919;
 
-  font-family: inherit;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
+  line-height: 22px;
 
+  box-sizing: border-box;
   outline: none;
-
-  transition: border-color 0.2s ease;
 }
 
 .form-group input:focus,
@@ -542,8 +538,8 @@ img {
 }
 
 .form-row {
-  display: flex;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
@@ -617,6 +613,6 @@ img {
   }
 
   .form-row {
-      flex-direction: column;
-  }
+    grid-template-columns: 1fr;
+}
 }
