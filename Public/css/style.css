@@ -777,3 +777,270 @@ img {
       box-sizing: border-box;
   }
 }
+
+
+/* =========================
+   ADMIN - BOKNINGAR
+========================= */
+
+.bookings-page {
+  min-height: calc(100vh - 80px);
+
+  padding: 70px 8% 100px;
+
+  background: #f5f2ed;
+}
+
+
+/* RUBRIK */
+
+.bookings-heading {
+  max-width: 1200px;
+
+  margin: 0 auto 40px;
+}
+
+.bookings-heading .subtitle {
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #9a6b3f;
+}
+
+.bookings-heading h1 {
+  margin: 0 0 10px;
+
+  font-size: 48px;
+  font-weight: 700;
+
+  color: #191919;
+}
+
+.bookings-heading > p:last-child {
+  margin: 0;
+
+  color: #666;
+}
+
+
+/* LISTA MED BOKNINGAR */
+
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+/* ENSKILD BOKNING */
+
+.booking-item {
+  display: grid;
+
+  grid-template-columns:
+  minmax(150px, 0.8fr)
+  minmax(220px, 1.5fr)
+  minmax(180px, 1fr)
+  auto;
+
+  align-items: center;
+
+  padding: 25px 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #ebe7e1;
+
+  transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+}
+
+.booking-item:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+
+/* DATUM OCH TID */
+
+.booking-date {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding-right: 25px;
+
+  border-right: 1px solid #e5e0d9;
+}
+
+.booking-date strong {
+  font-size: 16px;
+
+  color: #191919;
+}
+
+.booking-date span {
+  font-size: 22px;
+  font-weight: 700;
+
+  color: #9a6b3f;
+}
+
+
+/* KUND */
+
+.booking-customer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding: 0 30px;
+}
+
+.booking-customer strong {
+  font-size: 17px;
+
+  color: #191919;
+}
+
+.booking-customer span {
+  font-size: 14px;
+
+  color: #777;
+}
+
+
+/* BEHANDLING */
+
+.booking-service {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding-left: 30px;
+
+  border-left: 1px solid #e5e0d9;
+}
+
+.booking-service span {
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  color: #999;
+}
+
+.booking-service strong {
+  font-size: 16px;
+
+  color: #191919;
+}
+
+.booking-actions {
+  padding-left: 30px;
+}
+
+.delete-button {
+  padding: 12px 18px;
+
+  border: 1px solid #d8d3cc;
+
+  background: transparent;
+  color: #191919;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+}
+
+.delete-button:hover {
+  background: #191919;
+  color: #ffffff;
+  border-color: #191919;
+}
+
+
+/* INGA BOKNINGAR */
+
+.bookings-list > p {
+  padding: 40px;
+
+  background: #ffffff;
+
+  text-align: center;
+
+  color: #777;
+}
+
+
+/* =========================
+ MOBIL
+========================= */
+
+@media (max-width: 700px) {
+
+  .bookings-page {
+      padding: 50px 20px 70px;
+  }
+
+  .bookings-heading h1 {
+      font-size: 38px;
+  }
+
+  .booking-item {
+      grid-template-columns: 1fr;
+
+      gap: 20px;
+
+      padding: 25px;
+  }
+
+  .booking-date {
+      padding: 0 0 20px;
+
+      border-right: none;
+      border-bottom: 1px solid #e5e0d9;
+  }
+
+  .booking-customer {
+      padding: 0;
+  }
+
+  .booking-service {
+      padding: 20px 0 0;
+
+      border-left: none;
+      border-top: 1px solid #e5e0d9;
+  }
+
+  .booking-actions{
+    padding: 0;
+  }
+}

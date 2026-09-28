@@ -16,6 +16,11 @@ $router->get('/bookings/confirmation',
   'controllers/bookings/confirmation.php'
 );
 
+$router->post(
+  '/bookings/delete',
+  'controllers/bookings/destroy.php'
+);
+
 $router->post('/bookings', 'controllers/bookings/store.php');
 
 
